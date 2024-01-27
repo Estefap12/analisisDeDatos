@@ -13,6 +13,12 @@ def analizarCanastaBasica():
 #3. Aplico filtro para limpiar o seleccionar datos
 
     #print(tabla.head(20)) #Primeros N registros
-    #print(tabla.tail()) #Los ultimos registros   
+    #print(tabla.tail()) #Los ultimos registros
+    #Filtros:   
+    #filtroPanes=tabla.query(" (Producto=='Pan') and (Origen=='India')")
+    
+    filtroPrecios=tabla.query("PrecioporUnidad<50")
+    
+    crearTabla(filtroPrecios, "filtroPrecios")
 
 

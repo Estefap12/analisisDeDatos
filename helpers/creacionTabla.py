@@ -31,5 +31,5 @@ def crearTabla(dataFrame,nombreTabla):
     
     archivoHTML=archivoHTML.replace('border="1" class="dataframe"','class="table table-striped",',-1)
     
-    with open(rutaArchivo,"w") as archivo:
+    with open(rutaArchivo,"w", encoding="utf-8") as archivo:
         archivo.write(f"{encabezadoHTML}\n{archivoHTML}\n</body>\n</html>")
