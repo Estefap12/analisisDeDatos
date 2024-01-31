@@ -2,6 +2,7 @@
 
 import pandas as pd 
 from helpers.creacionTabla import crearTabla
+from helpers.creacionGraficas import generarGrafica
 
 def analizarCanastaBasica():
     #2. Sin importar la fuente (sql, xls, JSON ,csv...)
@@ -15,10 +16,13 @@ def analizarCanastaBasica():
     #print(tabla.head(20)) #Primeros N registros
     #print(tabla.tail()) #Los ultimos registros
     #Filtros:   
-    #filtroPanes=tabla.query(" (Producto=='Pan') and (Origen=='India')")
+    filtroPanes=tabla.query(" (Producto=='Pan')") #and (Origen=='India')
     
     filtroPrecios=tabla.query("PrecioporUnidad<50")
     
     crearTabla(filtroPrecios, "filtroPrecios")
+    
+    #Graficando los dataFrames
+    generarGrafica(filtroPanes)
 
 
